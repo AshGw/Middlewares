@@ -129,3 +129,9 @@ View *[ref](https://www.w3.org/TR/permissions-policy/)*
 ```go
 w.Header().Set("Permissions-Policy", "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), clipboard-read=(), clipboard-write=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), gamepad=(), geolocation=(self 'https://trusted.com'), gyroscope=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), speaker=(), speaker-selection=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()")
 ```
+
+### Other Notes
+
+Out in the wild you might find occurrences where 
+[HPKP](https://tools.ietf.org/html/rfc7469)  is still being used, well it got deprecated in [2018](https://www.chromestatus.com/feature/5903385005916160). It was to be replaced with the CT framework w/ [Expect-CT](https://datatracker.ietf.org/doc/rfc9163/) header, but as of today this header is **obsolete**.
+View *[ref](https://chromestatus.com/feature/6244547273687040)*
