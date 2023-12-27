@@ -28,6 +28,27 @@ The feds
 Content-Security-Policy: script-src 'nonce-r4nD0mV41u3'; 
 ```
 
+If you're using `NextJS` Here's how you set the scripts
+
+```Typescript
+import Script from 'next/script'
+ 
+export default function Page() {
+  const nonce = "" // get it depending on the nature of the app
+ 
+  return (
+    <Script
+      src="https://www.googletagmanager.com/gtag/js"
+      strategy="afterInteractive"
+      nonce={nonce}
+    />
+  )
+}
+```
+`NextJS v13+` has a server implementation for homogeneous apps view  *[ref](https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy)*
+
+
+
 #### Directives reminder 
 - `base-uri`  Restrict  `base-uri` to block the injection of <base> tags. This prevents attackers from changing the locations of scripts loaded from relative URLs.
 - `img-src` you might add trusted sources
